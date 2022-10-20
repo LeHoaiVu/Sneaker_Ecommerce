@@ -68,7 +68,7 @@ const DefaultHeader = (props) => {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                SNEAKER ECOMMERCE
             </Typography>
             <Divider />
             <List>
@@ -154,7 +154,7 @@ const DefaultHeader = (props) => {
                             variant="h6"
                             component={RouterLink}
                         >
-                            VU SNEAKER ECOMMERCE
+                            SNEAKER ECOMMERCE
                         </Link>
                     </Box>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
