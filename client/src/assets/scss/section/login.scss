@@ -1,0 +1,154 @@
+:root {
+    --input-color: #99a3ba;
+    --input-border: #cdd9ed;
+    --input-background: #fff;
+    --input-placeholder: #cbd1dc;
+
+    --input-border-focus: #275efe;
+
+    --group-color: var(--input-color);
+    --group-border: var(--input-border);
+    --group-background: #eef4ff;
+
+    --group-color-focus: #fff;
+    --group-border-focus: var(--input-border-focus);
+    --group-background-focus: #678efe;
+}
+
+.login-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .login-img {
+        width: 55%;
+        height: 100%;
+    }
+    &-form {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 15px;
+        &-title {
+            margin: 20px 0px 30px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        &-img {
+            width: 50px;
+            height: 50px;
+        }
+        form {
+            width: 100%;
+            .input-field {
+                // &:not(:last-child) {
+                //     margin-bottom: 32px;
+                // }
+                display: block;
+                width: 100%;
+                padding: 8px 16px;
+                line-height: 25px;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: inherit;
+                border-radius: 6px;
+                -webkit-appearance: none;
+                color: var(--input-color);
+                border: 1px solid var(--input-border);
+                background: var(--input-background);
+                transition: border 0.3s ease;
+                &::placeholder {
+                    color: var(--input-placeholder);
+                }
+                &:focus {
+                    outline: none;
+                    border-color: var(--input-border-focus);
+                }
+            }
+
+            .error-msg {
+                height: 32px;
+                p {
+                    color: #d41a1a;
+                    font-size: 12px;
+                    font-weight: bold;
+                    &:not(:last-child) {
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+            .login-form-item {
+                position: relative;
+                display: flex;
+                width: 100%;
+                span {
+                    width: 25%;
+                }
+                & > span,
+                .input-field {
+                    white-space: nowrap;
+                    display: block;
+                    &:not(:first-child):not(:last-child) {
+                        border-radius: 0px 6px 6px 0px;
+                    }
+                    &:first-child {
+                        border-radius: 6px 0 0 6px;
+                    }
+                    &:last-child {
+                        border-radius: 0 6px 6px 0;
+                    }
+                    &:not(:first-child) {
+                        margin-left: -1px;
+                    }
+                }
+                .input-field {
+                    position: relative;
+                    z-index: 1;
+                    flex: 1 1 auto;
+                    width: 1%;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    border-radius: 6px 0 0 6px;
+                }
+                & > span {
+                    text-align: center;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    line-height: 25px;
+                    color: var(--group-color);
+                    background: var(--group-background);
+                    border: 1px solid var(--group-border);
+                    transition: background 0.3s ease, border 0.3s ease,
+                        color 0.3s ease;
+                }
+                &:focus-within {
+                    & > span {
+                        color: var(--group-color-focus);
+                        background: var(--group-background-focus);
+                        border-color: var(--group-border-focus);
+                    }
+                }
+            }
+            .login-submit {
+                display: flex;
+                justify-content: center;
+                &-btn {
+                    padding: 5px 25px;
+                    border-radius: 5px;
+                    border: 2px solid #d2bdff;
+                    color: #9c9992;
+                    font-weight: 600;
+                    background-color: inherit;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #d2bdff;
+                        color: #000;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
