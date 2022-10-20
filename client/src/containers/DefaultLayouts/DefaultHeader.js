@@ -154,7 +154,7 @@ const DefaultHeader = (props) => {
                             variant="h6"
                             component={RouterLink}
                         >
-                            SNEAKER ECOMMERCE
+                            VU SNEAKER ECOMMERCE
                         </Link>
                     </Box>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
