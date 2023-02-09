@@ -29,28 +29,30 @@ const MenShoesChild = (props) => {
     }, [addUserCart, isLogin, history]);
 
     return (
-        <Grid item xs={12} sm={6}>
-            <Card>
+        <Grid item xs={12} md={4} sm={3}>
+            <Card className="card-item">
                 <CardMedia
                     image={shoes.attachment}
                     tittle="Tittle"
-                    className={classes.media}
+                    className="img-card"
                 />
                 <CardContent>
-                    <Typography variant="h5" color="textPrimary">
+                    <Typography variant="p" color="textPrimary">
                         {shoes.name}
                     </Typography>
                     <div className={classes.cart}>
                         <Typography
                             variant="p"
-                            color="textPrimary"
                             className={classes.cartPrice}
                         >
-                            {`${shoes.price}$`}
+                            {`${shoes.price}₫`}
                         </Typography>
-                        <AddShoppingCartIcon onClick={handleAddToCart} />
                     </div>
                 </CardContent>
+
+                <div className="add-to-cart-btn">
+                    <AddShoppingCartIcon onClick={handleAddToCart} />
+                </div>
             </Card>
         </Grid>
     );

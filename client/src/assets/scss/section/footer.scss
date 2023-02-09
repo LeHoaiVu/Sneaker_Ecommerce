@@ -1,4 +1,26 @@
 .footer {
+    position: relative;
+    margin: 0px;
+    background-color: #f5f5f5;
+    padding: 0px;
     bottom: 0;
-    position: sticky;
+    width: 100%;
+    color: #1a0000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px;
+}
+
+.sub {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sub p {
+    margin: 5px;
 }

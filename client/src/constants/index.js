@@ -272,3 +272,32 @@ export const address = [
         ],
     },
 ];
+
+export const HOT_NEWS = [
+    {
+        video: 'https://brand.assets.adidas.com/image/upload/q_auto,vc_auto,c_scale,w_0.5/viVN/Images/football-ss23-feds-jamaica-hp-tc_tcm337-980247.mp4',
+        title: 'Adidas 4DFWD 2. Forward Motion Redefined.',
+        subtitle:
+            'Unquestionable smoothness stride after stride, after stride.',
+    },
+    {
+        video: 'https://brand.assets.adidas.com/video/upload/q_auto,vc_auto,c_scale,w_0.5/video/upload/sportswear-SS23-global-educate-hp-teasercardcarousel-m_dtkxoa.mp4',
+        title: 'adidas Sportswear',
+        subtitle:
+            'Iconic sportswear reimagined for any wear. On or off the pitch.',
+    },
+    {
+        video: 'https://brand.assets.adidas.com/video/upload/q_auto,vc_auto,c_scale,w_0.5/video/upload/football-fw22-manchesterunited-away-hp-tcc_pm02ak.mp4',
+        title: 'MAN UTD 22/23 AWAY KIT',
+        subtitle:
+            'The legendary classic white is back combined with red and black 3 stripes.',
+    },
+    {
+        video: 'https://brand.assets.adidas.com/video/upload/q_auto,vc_auto,c_scale,w_0.5/video/upload/training-ss22-bra_rev-launch-hp-teaser_carousel-m_iksc2b.mp4',
+        title: 'SUPPORT IS EVERYTHING',
+        subtitle: 'Sports bras for every fit and move.',
+    },
+];
+
+export const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;

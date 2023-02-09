@@ -96,7 +96,7 @@ const EnhancedTableToolbar = (props) => {
             )}
 
             {selectedItem.length > 0 ? (
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} className="order-handling">
                     <Tooltip title="Delete">
                         <Button
                             size="small"

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 767px) {
+    .register-page {
+        .register-img {
+            display: none;
+        }
+        .register-page-form {
+            width: 100%;
+        }
+    }
+    form {
+        .register-form-item {
+            span {
+                width: 40% !important;
+            }
+        }
+    }
+}

@@ -9,5 +9,7 @@ export default makeStyles(() => ({
     },
     cartPrice: {
         flexGrow: 1,
+        marginBottom: 10,
+        color: '#4287f5',
     },
 }));

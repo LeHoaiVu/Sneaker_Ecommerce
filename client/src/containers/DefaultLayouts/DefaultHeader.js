@@ -66,29 +66,38 @@ const DefaultHeader = (props) => {
     }, [loginAccountClear, history]);
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
+        <Box
+            onClick={handleDrawerToggle}
+            sx={{ textAlign: 'center', color: '#90caf9' }}
+        >
+            <Typography variant="p" sx={{ my: 2 }}>
                 SNEAKER ECOMMERCE
             </Typography>
             <Divider />
             <List>
                 <NavLink to={`${HOME_PAGE}`}>
                     <ListItem disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton
+                            sx={{ textAlign: 'center', color: '#90caf9' }}
+                        >
                             <ListItemText primary="HOME" />
                         </ListItemButton>
                     </ListItem>
                 </NavLink>
                 <NavLink to={`${MEN_SHOES_PAGE}`}>
                     <ListItem disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton
+                            sx={{ textAlign: 'center', color: '#90caf9' }}
+                        >
                             <ListItemText primary="MEN" />
                         </ListItemButton>
                     </ListItem>
                 </NavLink>
                 <NavLink to={`${REGISTER_PAGE}`}>
                     <ListItem disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton
+                            sx={{ textAlign: 'center', color: '#90caf9' }}
+                        >
                             <ListItemText primary="REGISTER" />
                         </ListItemButton>
                     </ListItem>
@@ -97,7 +106,12 @@ const DefaultHeader = (props) => {
                     <>
                         <NavLink to={`${HOME_PAGE}`} onClick={handleLogout}>
                             <ListItem disablePadding>
-                                <ListItemButton sx={{ textAlign: 'center' }}>
+                                <ListItemButton
+                                    sx={{
+                                        textAlign: 'center',
+                                        color: '#90caf9',
+                                    }}
+                                >
                                     <ListItemText primary="LOGOUT" />
                                 </ListItemButton>
                             </ListItem>
@@ -106,7 +120,10 @@ const DefaultHeader = (props) => {
                             <NavLink to={`${MY_SHOP}${userInfo._id}`}>
                                 <ListItem disablePadding>
                                     <ListItemButton
-                                        sx={{ textAlign: 'center' }}
+                                        sx={{
+                                            textAlign: 'center',
+                                            color: '#90caf9',
+                                        }}
                                     >
                                         <ListItemText primary="MY STORE" />
                                     </ListItemButton>
@@ -117,7 +134,9 @@ const DefaultHeader = (props) => {
                 ) : (
                     <NavLink to={`${LOGIN_PAGE}`}>
                         <ListItem disablePadding>
-                            <ListItemButton sx={{ textAlign: 'center' }}>
+                            <ListItemButton
+                                sx={{ textAlign: 'center', color: '#90caf9' }}
+                            >
                                 <ListItemText primary="LOGIN" />
                             </ListItemButton>
                         </ListItem>
@@ -149,12 +168,28 @@ const DefaultHeader = (props) => {
                         }}
                     >
                         <Link
-                            sx={{ marginRight: '15px', textDecoration: 'none' }}
+                            sx={{
+                                marginRight: '15px',
+                                textDecoration: 'none',
+                                width: '50px',
+                                height: '50px',
+                                display: 'flex',
+                            }}
                             to={`${HOME_PAGE}`}
                             variant="h6"
                             component={RouterLink}
                         >
-                            SNEAKER ECOMMERCE
+                            <svg
+                                viewBox="100 100 50 32"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M 150.07 131.439 L 131.925 100 L 122.206 105.606 L 137.112 131.439 L 150.07 131.439 Z M 132.781 131.439 L 120.797 110.692 L 111.078 116.298 L 119.823 131.439 L 132.781 131.439 Z M 109.718 121.401 L 115.509 131.439 L 102.551 131.439 L 100 127.007 L 109.718 121.401 Z"
+                                    fill="black"
+                                ></path>
+                            </svg>
                         </Link>
                     </Box>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -206,36 +241,6 @@ const DefaultHeader = (props) => {
                                         MY STORE
                                     </Link>
                                 )}
-                                <Link
-                                    to={`${MY_SHOPING_CART}${userInfo._id}`}
-                                    variant="button"
-                                    component={RouterLink}
-                                    className={`badge ${
-                                        current_path.pathname === '/checkout'
-                                            ? 'hidden'
-                                            : ''
-                                    }`}
-                                >
-                                    <IconButton
-                                        aria-label="cart"
-                                        className="header-menu-badge-button"
-                                    >
-                                        <Badge
-                                            badgeContent={userInfo.cart.reduce(
-                                                (sum, next) => {
-                                                    return (
-                                                        sum + next.prodNumber
-                                                    );
-                                                },
-                                                0
-                                            )}
-                                            color="secondary"
-                                            className="header-menu-badge-icon"
-                                        >
-                                            <ShoppingCartIcon />
-                                        </Badge>
-                                    </IconButton>
-                                </Link>
                             </>
                         ) : (
                             <Link
@@ -245,6 +250,38 @@ const DefaultHeader = (props) => {
                                 sx={{ textDecoration: 'none' }}
                             >
                                 LOGIN
+                            </Link>
+                        )}
+                    </Box>
+                    <Box>
+                        {isLogin && (
+                            <Link
+                                to={`${MY_SHOPING_CART}${userInfo._id}`}
+                                variant="button"
+                                component={RouterLink}
+                                className={`badge ${
+                                    current_path.pathname === '/checkout'
+                                        ? 'hidden'
+                                        : ''
+                                }`}
+                            >
+                                <IconButton
+                                    aria-label="cart"
+                                    className="header-menu-badge-button"
+                                >
+                                    <Badge
+                                        badgeContent={userInfo.cart.reduce(
+                                            (sum, next) => {
+                                                return sum + next.prodNumber;
+                                            },
+                                            0
+                                        )}
+                                        color="secondary"
+                                        className="header-menu-badge-icon"
+                                    >
+                                        <ShoppingCartIcon />
+                                    </Badge>
+                                </IconButton>
                             </Link>
                         )}
                     </Box>

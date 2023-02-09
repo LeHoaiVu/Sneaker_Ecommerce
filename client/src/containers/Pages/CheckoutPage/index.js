@@ -6,16 +6,17 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import * as Yup from 'yup';
-import { address } from '../../../constants';
+import { address, phoneRegExp } from '../../../constants';
 import { userInfoSelector } from '../../../redux/selectors';
+import BrowserStoreService, {
+    BROWSER_KEY,
+} from '../../../shared/services/browserStoreServices';
 import { getAddress } from '../../../ultilities/helpers';
 import ListOrderedProducts from './components/ListOrderedProducts';
 
-const phoneRegExp =
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
 const CheckoutPage = (props) => {
-    const { history, userInfo } = props;
+    const { userInfo } = props;
+    const [oderedShoes, setOderedShoes] = useState([]);
     const [isDisabledField, setIsDisabledField] = useState({
         isDisabledDistrict: true,
         isDisabledWard: true,
@@ -33,6 +34,10 @@ const CheckoutPage = (props) => {
 
         address.forEach((addr) => provinceTemp.push(addr.name));
         setAddressData({ ...addressData, province: provinceTemp });
+
+        setOderedShoes(
+            BrowserStoreService.getBrowserData(BROWSER_KEY.ORDERED_SHOES)
+        );
     }, []);
 
     const formik = useFormik({
@@ -62,7 +67,7 @@ const CheckoutPage = (props) => {
         // },
 
         onSubmit: (values) => {
-            console.log(values);
+            console.log({ address: values, order_shoes: oderedShoes });
         },
     });
 
