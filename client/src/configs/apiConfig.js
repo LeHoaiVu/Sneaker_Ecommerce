@@ -1,4 +1,4 @@
-export const APP_URL = `http://localhost:5000`;
+export const APP_URL = `https://sneakerecomerce-be.onrender.com`;
 export const API_GET_MEN_SHOES = `/men`;
 export const API_ADD_USER_CART = `/add-to-cart`;
 export const API_UPDATE_USER_CART = `/update-to-cart`;
